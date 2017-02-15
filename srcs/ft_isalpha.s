@@ -2,11 +2,12 @@ section .text
 	global _ft_isalpha
 
 _ft_isalpha:
+	xor rax, rax			;Initialize rax to 0
 	cmp rdi, 'A'			;Check if uppercase first
 	jl _check_lowercase
 	cmp rdi, 'Z'
 	jg _check_lowercase
-	mov rax, 1
+	inc rax
 	ret
 
 _check_lowercase:
@@ -14,9 +15,8 @@ _check_lowercase:
 	jl _no
 	cmp rdi, 'z'
 	jg _no
-	mov rax, 1
+	inc rax
 	ret
 
 _no:
-	mov rax, 0
 	ret

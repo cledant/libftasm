@@ -2,13 +2,13 @@ section .text
 	global _ft_isprint
 
 _ft_isprint:
+	xor rax, rax	;Initialize rax to 0
 	cmp rdi, ' '
 	jl _no
 	cmp rdi, '~'
 	jg _no
-	mov rax, 1
+	inc rax
 	ret
 
 _no:
-	mov rax, 0
 	ret
