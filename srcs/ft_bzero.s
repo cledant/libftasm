@@ -7,7 +7,7 @@ _ft_bzero:
 	ret
 
 _set:
-	xor al, al
-	mov rcx, rsi
+	xor al, al			;Setting value copied by stosb
+	mov rcx, rsi		;Setting counter for rep
 	rep stosb
 	ret
