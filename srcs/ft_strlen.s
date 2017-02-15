@@ -9,6 +9,6 @@ _ft_strlen:
 	or rcx, MAX_64BIT	;Set rcx at MAX_64BIT value
 	repne scasb			;Scan rdi for value in al
 	or rax, MAX_64BIT	;Set rac to MAX_64BIT value
-	sub rax, rcx		;Calculatie retun value
+	sub rax, rcx		;Calculate retun value
 	sub rax, 1			;Scasb did at least 1 loop
 	ret
