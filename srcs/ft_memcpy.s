@@ -8,6 +8,7 @@ _ft_memcpy:
 	ret
 
 _set:
+	cld					;Reset direction flag
 	mov rcx, rdx		;Setting counter for rep
 	rep movsb
 	ret
