@@ -2,14 +2,12 @@ section .text
 	global _ft_bzero
 
 _ft_bzero:
-	mov rcx, rdi
-	mov rdx, 0
-	cmp rdx, rsi
-	jl _loop
+	cmp rsi, 0
+	jnz _set
+	ret
 
-_loop:
-	mov [rcx], byte 0
-	inc rcx
-	inc rdx
-	cmp rdx, rsi
-	jl _loop
+_set:
+	xor al, al
+	mov rcx, rsi
+	rep stosb
+	ret

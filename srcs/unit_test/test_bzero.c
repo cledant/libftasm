@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/14 20:10:25 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/15 16:04:08 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int		ft_bzero(void *s, size_t n);
 
 int		main(void)
 {
-	char	*test = "Ceci est un test";
-	size_t	len = strlen(test);
+	char	*test = (char *)malloc(sizeof(char) * 100);
 
+	strcpy(test, "Ceci est un test HOHOHOHOHO");
 	printf("str : %s\n", test);
-	ft_bzero(test, len);
+	ft_bzero(test + 10, 0);
 	printf("apres_ft_bzero\n");
 	printf("str : %s\n", test);
 	return (0);
