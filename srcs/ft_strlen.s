@@ -1,17 +1,14 @@
+%define MAX_64BIT 0xFFFFFFFFFFFFFFFF
+
 section .text
 	global _ft_strlen
 
 _ft_strlen:
-	mov rax, 0
-	mov rcx, rdi
-	jmp _loop
-	
-_loop:
-	cmp [rcx], byte 0
-	je	_ret
-	inc rax
-	inc rcx
-	jmp _loop
-
-_ret:
+	cld					;Clear direction flag
+	xor al, al			;Initialize al to 0
+	or rcx, MAX_64BIT	;Set rcx at MAX_64BIT value
+	repne scasb			;Scan rdi for value in al
+	or rax, MAX_64BIT	;Set rac to MAX_64BIT value
+	sub rax, rcx		;Calculatie retun value
+	sub rax, 1			;Scasb did at least 1 loop
 	ret
