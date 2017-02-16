@@ -21,8 +21,7 @@ _ft_cat:
 	mov rbp, rsp
 	push r12						;Save fd in r12
 	mov r12, rdi
-	cmp rdi, STDIN
-	je _stdin
+	push r13						;Save read return (in a case) in r13 
 	jmp _loop
 
 _loop:
@@ -32,13 +31,14 @@ _loop:
 	mov rdx, BUFF_SIZE
 	syscall
 	cmp rax, 0						;Case if read failed
-	jl _error_read_write
+	jl _exit
 	cmp rax, BUFF_SIZE				;Case if finished to read or not
 	jl _last_write
 	jmp _write
 
-_error_read_write:
-	pop r12							;Resetting values
+_exit:
+	pop r13							;Resetting values
+	pop r12
 	pop rbp
 	ret
 
@@ -49,20 +49,26 @@ _write:
 	lea rsi, [rel buff]
 	syscall
 	cmp rax, 0						;Case if write failed
-	jl _error_read_write
+	jl _exit
 	jmp _loop						;loop to read
 
 _last_write:
+	mov r13, rax
 	mov rdx, rax					;Setting write call + moving nb of read char
 	mov rax, MACH_SYSCALL(WRITE)
 	mov rdi, STDOUT
 	lea rsi, [rel buff]
 	syscall							;Return in all cases
-	pop r12							;Resetting values
-	pop rbp
-	ret
+	cmp rax, 0						;Case if write failed
+	jl _exit
+	cmp r12, STDIN
+	je _stdin_exit_check
+	jmp _exit
 
-_stdin:
+_stdin_exit_check:
+	cmp r13, 0						;Checking if read was empty
+	je _exit
+	jmp _loop
 
 _errorfd:
 	ret
