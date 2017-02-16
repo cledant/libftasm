@@ -2,7 +2,7 @@
 %define STDOUT				1
 %define WRITE				4
 
-section .data
+section .rodata
 text_null:
 	.string db "(null)", 10
 	.len equ $ - text_null.string
