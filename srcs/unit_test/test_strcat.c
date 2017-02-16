@@ -6,13 +6,13 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/16 10:45:27 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/16 12:23:34 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_strcat(char *restrict s1, char *restrict s2);
+char	*ft_strcat(char *restrict s1, char *restrict s2);
 
 int		main(void)
 {

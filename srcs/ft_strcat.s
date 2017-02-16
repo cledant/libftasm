@@ -1,35 +1,31 @@
 section .text
 	global _ft_strcat
-	extern _ft_strlen
-	extern _ft_memcpy
 
 _ft_strcat:
-	push rbp			;Setting ret
-	mov rbp, rsp
-	push r12			;Save s1 addr
-	mov r12, rdi
-	push r13			;Save s2 addr
-	mov r13, rsi
-	mov rdi, rsi		;Get Len s2
-	call _ft_strlen
-	push r14			;Save Len s2
-	mov r14, rax
-	mov rdi, r12		;Get Len s1
-	call _ft_strlen
-	push r15			;Save Len s1
-	mov r15, rax
-	mov rdi, r12		;Setting memcpy at end s1
-	add rdi, rax
-	mov rsi, r13
-	mov rdx, r14
-	call _ft_memcpy
-	mov rax, r12		;Setting return value
-	add r12, r14		;Setting NULL terminator
-	add r12, r15
-	mov byte [r12], 0
-	pop r15				;Restoring registers
-	pop r14
-	pop r13
-	pop r12
-	pop rbp
+	cld					;Clear direction flag
+	mov r8, rdi 		;Save s1 addr in r8
+	xor al, al			;Init al to 0
+	mov rcx, -1			;Get and save s2 len in r11
+	mov rdi, rsi
+	repne scasb
+	mov r11, -2
+	sub r11, rcx
+	cmp r11, 0			;Exit if s2 size is 0
+	je _exit
+	mov rcx, -1			;Get and save s1 len in r10
+	mov rdi, r8
+	repne scasb
+	mov r10, -2
+	sub r10, rcx
+	mov rdi, r8			;Doing copy from end S1
+	add rdi, r10
+	mov rcx, r11
+	rep movsb
+	add rdi, r11		;Adding NULL terminator
+	mov byte [rdi], 0
+	mov rax, r8			;Set return value
+	ret
+
+_exit:
+	mov rax, r8			;Set return value
 	ret
