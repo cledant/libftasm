@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/15 20:46:57 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/16 10:45:27 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		main(void)
 	bzero(dst, sizeof(char) * 300);
 	strcpy(dst, "Patate!");
 	printf("str : %s\n", dst);
-	ptr = ft_strcat(dst, src);
+	ptr = ft_strcat(dst + 5, src + 10);
 	printf("apres_ft_strcat\n");
 	printf("str : %s\n", dst);
 	printf("test ptr\n");

@@ -2,8 +2,8 @@ section .text
 	global _ft_memcpy
 
 _ft_memcpy:
-	mov rax, rdi
-	cmp rsi, 0
+	mov rax, rdi		;Setting return value
+	cmp rdx, 0
 	jnz _set
 	ret
 

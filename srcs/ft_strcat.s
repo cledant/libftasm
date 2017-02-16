@@ -1,26 +1,35 @@
 section .text
 	global _ft_strcat
+	extern _ft_strlen
+	extern _ft_memcpy
 
 _ft_strcat:
-	cld
-	xor al, al			;Set al at 0
-	mov rcx, -1			;Set rcx to max
-	mov r8, rdi			;Saving s1 addr
-	mov rdx, -2			;Set rdx to max and sub 1
-	repne scasb			;Seeking length with NULL terminated char
-	sub rdx, rcx	
-	add rdi, rdx		;Set where to write
-	jmp _loop
-
-_loop:
-	cmp byte [rsi], 0
-	je _ret
-	mov [rdi], [rsi]
-	inc rsi
-	inc rdi
-	jmp _loop
-
-_ret:
-	mov byte [rdi], 0	;Writting NULL terminator
-	mov rax, r8			;Set return value
+	push rbp			;Setting ret
+	mov rbp, rsp
+	push r12			;Save s1 addr
+	mov r12, rdi
+	push r13			;Save s2 addr
+	mov r13, rsi
+	mov rdi, rsi		;Get Len s2
+	call _ft_strlen
+	push r14			;Save Len s2
+	mov r14, rax
+	mov rdi, r12		;Get Len s1
+	call _ft_strlen
+	push r15			;Save Len s1
+	mov r15, rax
+	mov rdi, r12		;Setting memcpy at end s1
+	add rdi, rax
+	mov rsi, r13
+	mov rdx, r14
+	call _ft_memcpy
+	mov rax, r12		;Setting return value
+	add r12, r14		;Setting NULL terminator
+	add r12, r15
+	mov byte [r12], 0
+	pop r15				;Restoring registers
+	pop r14
+	pop r13
+	pop r12
+	pop rbp
 	ret
