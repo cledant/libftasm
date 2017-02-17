@@ -2,18 +2,12 @@ section .text
 	global _ft_strcmp
 
 _ft_strcmp:
-	cmp byte [rdi], 0				;Test end of s1
-	je _exit
-	cmpsb							;Compare s1 and s2
-	jne	_exit
-	inc	rdi
-	inc rsi
-	jmp _ft_strcmp					;Loop to the beginning
-
-_exit:
-	xor rax, rax					;Init rax to 0
-	mov al, [rdi]					;Calculate return value
-	mov ah, [rsi]
-	sub al, ah
-	xor ah, ah						;Set ah to 0
+	cld
+	mov rcx, -1
+	repnz cmpsb						;Compare s1 and s2
+	mov r8, [rdi]
+	mov r9, [rsi]
+	sub r8, r9
+	xor rax, rax
+	mov rax, r8
 	ret
