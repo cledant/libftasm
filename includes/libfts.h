@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 12:51:02 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/17 13:02:23 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/17 13:58:59 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void restrict *dst, const void restrict *src, size_t n);
 char	*ft_strdup(const char *s1);
 void	ft_cat(int fd);
+char	*ft_strnew(size_t size);
+char	*strchr(const char *s, int c);
 
 #endif
