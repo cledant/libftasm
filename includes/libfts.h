@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 12:51:02 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/17 13:58:59 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/17 15:01:33 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ char	*ft_strdup(const char *s1);
 void	ft_cat(int fd);
 char	*ft_strnew(size_t size);
 char	*strchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*strcpy(char *dst, const char *src);
 
 #endif
