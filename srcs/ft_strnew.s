@@ -1,11 +1,9 @@
 section .text
 	global _ft_strnew
-	_extern _malloc
-	_extern _ft_bzero
+	extern _malloc
+	extern _ft_bzero
 
 _ft_strnew:
-	push rbp					;Setting ret
-	mov rbp, rsp
 	inc rdi						;Adding NULL terminator
 	push r12					;Save size +1 in r12
 	mov r12, rdi
@@ -18,12 +16,10 @@ _ft_strnew:
 	mov rsi, r12
 	call _ft_bzero
 	mov rax, r13				;Setting return value
-	pop r13						;Retore values
+	pop r13						;Restore values
 	pop r12
-	pop rbp
 	ret
 
 _exit:
 	pop r12
-	pop rbp
 	ret
