@@ -21,9 +21,10 @@ _ft_strcat:
 	add rdi, r10
 	mov rcx, r11
 	rep movsb
-	add rdi, r11		;Adding NULL terminator
-	mov byte [rdi], 0
 	mov rax, r8			;Set return value
+	add r8, r11			;Adding NULL terminator
+	add r8, r10
+	mov byte [r8], 0
 	ret
 
 _exit:
