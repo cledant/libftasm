@@ -3,11 +3,22 @@ section .text
 
 _ft_strcmp:
 	cld
-	mov rcx, -1
-	repnz cmpsb						;Compare s1 and s2
-	mov r8, [rdi]
-	mov r9, [rsi]
-	sub r8, r9
 	xor rax, rax
-	mov rax, r8
+	jmp _loop
+
+_loop:
+	movzx rax, byte [rdi]
+	movzx r8, byte [rsi]
+	sub rax, r8
+	cmp rax, 0
+	jne _exit
+	cmp byte [rdi], 0
+	je _exit
+	cmp byte [rsi], 0
+	je _exit
+	inc rdi
+	inc rsi
+	jmp _loop
+
+_exit:
 	ret

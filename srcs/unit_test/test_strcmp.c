@@ -6,18 +6,19 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/17 20:03:47 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/19 13:10:20 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len);
+int		ft_strcmp(const char *s1, const char *s2);
 
 int		main(void)
 {
-	char	*test = "";
-	char	*test2 = "A";
+	char	*test = "AAAB";
+	char	*test2 = "AAAC";
 	int		res1;
 	int		res2;
 
