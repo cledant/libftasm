@@ -1,32 +1,68 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_is_digit.c                                    :+:      :+:    :+:   */
+/*   test_strcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/17 15:40:48 by cledant          ###   ########.fr       */
+/*   Created: 2017/02/20 19:50:29 by cledant           #+#    #+#             */
+/*   Updated: 2017/02/20 20:07:21 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libfts.h"
+#include "main_test.h"
 
-void	*ft_strcpy(char *dst, const char *src);
-
-int		main(void)
+void	test_strcpy(void)
 {
-	char	*base = "Ceci est un test HAHAHAHAHAHAHAHAHAHAHAHA";
-	char	*ptr = NULL;
-	char	*ptr2 = NULL;
+	char	*dst = (char *)malloc(sizeof(char) * 300);
+	char	*src = "Ceci-est-un-test-HAHAHAHAHAHAHAHAHAHAHAHA";
+	char	*src_empty = "";
+	char	*ptr;
 
-	printf("str : %s\n", base);
-	ptr = (char *)malloc(sizeof(char) * 300);
-	bzero(ptr, 300);
-	memset(ptr, '0', 299);
-	ptr2 = ft_strcpy(ptr + 10, base);
-	printf("apres_ft_strcpy\n");
-	printf("str : %s\n", ptr);
-	printf("str : %s\n", ptr2);
-	return (0);
+	printf("========BONUS TEST STRCPY========\n\n");
+	printf("====TEST 1====\n");						//TEST 1
+	bzero(dst, sizeof(char) * 300);
+	printf("String in dst:\n%s\n", dst);
+	printf("Base string s2:\n%s\n", src);
+	ptr = ft_strcpy(dst, src);
+	printf("Test ft_strcpy :\n%s\n", dst);
+	printf("Test ft_strcpy return :\n%s\n", ptr);
+	bzero(dst, sizeof(char) * 300);
+	printf("String in dst:\n%s\n", dst);
+	ptr = strcpy(dst, src);
+	printf("Test strcpy :\n%s\n", dst);
+	printf("Test strcpy return :\n%s\n", ptr);
+	printf("====TEST 2====\n");						//TEST 1
+	bzero(dst, sizeof(char) * 300);
+	memset(dst, '0', 50);
+	printf("String in dst:\n%s\n", dst);
+	printf("Base string s2:\n%s\n", src_empty);
+	ptr = ft_strcpy(dst, src_empty);
+	printf("Test ft_strcpy :\n%s\n", dst);
+	printf("Test ft_strcpy return :\n%s\n", ptr);
+	bzero(dst, sizeof(char) * 300);
+	bzero(dst, sizeof(char) * 300);
+	memset(dst, '0', 50);
+	printf("String in dst:\n%s\n", dst);
+	ptr = strcpy(dst, src_empty);
+	printf("Test strcpy :\n%s\n", dst);
+	printf("Test strcpy return :\n%s\n", ptr);
+	printf("====TEST 3====\n");						//TEST 1
+	bzero(dst, sizeof(char) * 300);
+	memset(dst, '0', 50);
+	printf("String in dst:\n%s\n", dst);
+	printf("Base string s2:\n%s\n", src);
+	ptr = ft_strcpy(dst + 10, src + 5);
+	printf("Test ft_strcpy :\n%s\n", dst);
+	printf("Test ft_strcpy return :\n%s\n", ptr);
+	bzero(dst, sizeof(char) * 300);
+	bzero(dst, sizeof(char) * 300);
+	memset(dst, '0', 50);
+	printf("String in dst:\n%s\n", dst);
+	ptr = strcpy(dst + 10, src + 5);
+	printf("Test strcpy :\n%s\n", dst);
+	printf("Test strcpy return :\n%s\n", ptr);
+	printf("========FIN BONUS TEST STRCPY========\n\n");
+	free(dst);
 }
