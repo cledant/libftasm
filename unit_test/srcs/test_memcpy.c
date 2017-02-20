@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 15:14:31 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 15:33:02 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 15:42:12 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,7 @@ void		test_memcpy(void)
 	printf("String memcpy :\n%s\n", test2);
 	printf("Return ptr ft_memcpy :\n%s\n", ptr);
 	printf("Return ptr memcpy :\n%s\n", ptr2);
+	printf("========FIN TEST FT_MEMCPY========\n\n");
+	free(test);
+	free(test2);
 }

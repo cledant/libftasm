@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 10:26:49 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 15:35:51 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 15:37:38 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void	test_puts(void);
 void	test_strlen(void);
 void	test_memset(void);
 void	test_memcpy(void);
+void	test_strdup(void);
 
 #endif

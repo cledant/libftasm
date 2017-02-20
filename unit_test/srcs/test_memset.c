@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 14:34:58 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 14:45:33 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 15:42:36 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,6 @@ void	test_memset(void)
 	printf("ft_memset return pointer :\n%s\n", ptr);
 	printf("memset return pointer :\n%s\n", ptr2);
 	printf("========FIN TEST FT_MEMSET========\n\n");
+	free(test);
+	free(test2);
 }
