@@ -2,9 +2,13 @@
 %define		STDOUT					1
 %define		WRITE					4
 
+section .rodata
+neg:
+	.string db "-", 10
+
 section .data
 char:
-	.string db "-", 10
+	.string db "a", 10
 
 section .text
 	global _ft_putnbr
@@ -22,7 +26,7 @@ _ft_putnbr:
 _neg:
 	mov rax, MACH_SYSCALL(WRITE)
 	mov rdi, STDOUT
-	lea rsi, [rel char.string]
+	lea rsi, [rel neg.string]
 	mov rdx, 1
 	syscall
 	neg r12d
