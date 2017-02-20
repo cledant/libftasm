@@ -6,23 +6,29 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/17 18:53:27 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 19:31:33 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "main_test.h"
+#include "libfts.h"
 
-char	*ft_strnew(size_t size);
-
-int		main(void)
+void	test_strnew(void)
 {
 	char	*base = "Ceci est un test HAHAHAHAHAHAHAHAHAHAHAHA";
 	char	*ptr;
 
-	printf("str : %s\n", base);
+	printf("========BONUS FT_STRNEW========\n\n");
+	printf("====TEST1====");
+	printf("String that will be copied after ft_strnew:\n%s\n", base);
 	ptr = ft_strnew(strlen(base));
-	printf("apres_ft_strnew\n");
 	strcpy(ptr, base);
-	printf("str : %s\n", ptr);
-	return (0);
+	printf("Copied string:\n%s\n", ptr);
+	free(ptr);
+	printf("====TEST2====\n");
+	printf("Will be a size 0 string\n");
+	ptr = ft_strnew(0);
+	printf("Size 0 string:\n%s\n", ptr);
+	free(ptr);
+	printf("========FIN BONUS FT_STRNEW========\n\n");
 }
