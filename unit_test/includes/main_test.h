@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 10:26:49 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 12:38:52 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 13:12:06 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <ctype.h>
+# include <xlocale.h>
 
 void	test_bzero(void);
 void	test_strcat(void);
@@ -25,5 +27,7 @@ void	test_isdigit(void);
 void	test_isalnum(void);
 void	test_isascii(void);
 void	test_isprint(void);
+void	test_toupper(void);
+void	test_tolower(void);
 
 #endif
