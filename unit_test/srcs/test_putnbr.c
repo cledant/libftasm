@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 16:23:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 16:31:06 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 16:45:46 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ void	test_putnbr(void)
 	printf("number 5 ft_putnbr :\n");
 	ft_putnbr(test5);
 	printf("\n");
+	printf("========FIN BONUS FT_PUTNBR========\n\n");
 }

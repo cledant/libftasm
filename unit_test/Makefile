@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/20 16:29:29 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/20 16:53:07 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIBFTS_PATH = ../libfts
 SRCS_NAME = main.c test_bzero.c test_strcat.c test_isalpha.c test_isdigit.c \
 			test_isalnum.c test_isascii.c test_isprint.c test_toupper.c \
 			test_tolower.c test_puts.c test_strlen.c test_memset.c \
-			test_memcpy.c test_strdup.c test_putnbr.c
+			test_memcpy.c test_strdup.c test_putnbr.c test_strcmp.c
 
 SRCS_CAT =  test_cat_file.c test_cat_stdin.c
 
