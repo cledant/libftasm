@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_is_digit.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/16 12:23:34 by cledant          ###   ########.fr       */
+/*   Created: 2017/02/20 10:18:58 by cledant           #+#    #+#             */
+/*   Updated: 2017/02/20 11:01:16 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strcat(char *restrict s1, char *restrict s2);
+#include "libfts.h"
+#include "main_test.h"
 
 int		main(void)
 {
-	char	*dst = (char *)malloc(sizeof(char) * 300);
-	char	*src = "Ceci est un test HAHAHAHAHAHAHAHAHAHAHAHA";
-	char	*ptr;
-
-	bzero(dst, sizeof(char) * 300);
-	strcpy(dst, "Patate!");
-	printf("str : %s\n", dst);
-	ptr = ft_strcat(dst + 5, src + 10);
-	printf("apres_ft_strcat\n");
-	printf("str : %s\n", dst);
-	printf("test ptr\n");
-	printf("str : %s\n", ptr);
+	test_bzero();
+	test_strcat();
 	return (0);
 }

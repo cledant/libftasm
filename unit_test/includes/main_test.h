@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_is_digit.c                                    :+:      :+:    :+:   */
+/*   main_test.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/15 16:04:08 by cledant          ###   ########.fr       */
+/*   Created: 2017/02/20 10:26:49 by cledant           #+#    #+#             */
+/*   Updated: 2017/02/20 11:09:23 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef MAIN_TEST_H
+# define MAIN_TEST_H
 
-int		ft_bzero(void *s, size_t n);
+# include <stdio.h>
+# include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-int		main(void)
-{
-	char	*test = (char *)malloc(sizeof(char) * 100);
+void	test_bzero(void);
+void	test_strcat(void);
 
-	strcpy(test, "Ceci est un test HOHOHOHOHO");
-	printf("str : %s\n", test);
-	ft_bzero(test + 10, 0);
-	printf("apres_ft_bzero\n");
-	printf("str : %s\n", test);
-	return (0);
-}
+#endif
