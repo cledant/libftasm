@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 10:26:49 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 13:12:06 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 13:16:15 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	test_isascii(void);
 void	test_isprint(void);
 void	test_toupper(void);
 void	test_tolower(void);
+void	test_puts(void);
 
 #endif

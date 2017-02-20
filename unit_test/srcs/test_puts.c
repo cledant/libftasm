@@ -1,39 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_is_digit.c                                    :+:      :+:    :+:   */
+/*   test_puts.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/14 16:40:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/16 16:20:52 by cledant          ###   ########.fr       */
+/*   Created: 2017/02/20 13:13:22 by cledant           #+#    #+#             */
+/*   Updated: 2017/02/20 13:26:48 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libfts.h"
+#include "main_test.h"
 
-int		ft_puts(const char *s);
-
-int		main(void)
+void	test_puts(void)
 {
-	char	*test = "caca";
+	char	*test1 = "";
 	char	*test2 = NULL;
-	int		ret;
+	char	*test3 = "Bonjour !";
+	char	*test4 = "This is a test \0toto\0lol\n";
+	int		ret1;
+	int		ret2;
 
-	printf("EOF value %d\n", EOF);
-	printf("=================\n");
-	ret = puts(test);
-	printf("Return value vrai: %d\n", ret);
-	printf("=================\n");
-	ret = ft_puts(test);
-	printf("Return value moi: %d\n", ret);
-	printf("=================\n");
-	printf("=================\n");
-	ret = puts(test2);
-	printf("Return value vrai: %d\n", ret);
-	printf("=================\n");
-	ret = ft_puts(test2);
-	printf("Return value moi: %d\n", ret);
-	printf("=================\n");
-	return (0);
+	printf("========TEST FT_PUTS========\n\n");
+	printf("String 1 with ft_puts:\n");
+	ret1 = ft_puts(test1);
+	printf("String 1 with puts:\n");
+	ret2 = ft_puts(test1);
+	printf("Return ft_puts: %d\n", ret1);
+	printf("Return puts: %d\n", ret2);
+	printf("String 2 with ft_puts:\n");
+	ret1 = ft_puts(test2);
+	printf("String 2 with puts:\n");
+	ret2 = ft_puts(test2);
+	printf("Return ft_puts: %d\n", ret1);
+	printf("Return puts: %d\n", ret2);
+	printf("String 3 with ft_puts:\n");
+	ret1 = ft_puts(test3);
+	printf("String 3 with puts:\n");
+	ret2 = ft_puts(test3);
+	printf("Return ft_puts: %d\n", ret1);
+	printf("Return puts: %d\n", ret2);
+	printf("String 4 with ft_puts:\n");
+	ret1 = ft_puts(test4);
+	printf("String 4 with puts:\n");
+	ret2 = ft_puts(test4);
+	printf("Return ft_puts: %d\n", ret1);
+	printf("Return puts: %d\n", ret2);
+	printf("========FIN TEST FT_PUTS========\n\n");
 }
