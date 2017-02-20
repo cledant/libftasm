@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 10:26:49 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 11:09:23 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 11:47:22 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 
 void	test_bzero(void);
 void	test_strcat(void);
+void	test_isalpha(void);
 
 #endif
