@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 10:26:49 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 15:37:38 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 16:06:45 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <xlocale.h>
+# include <fcntl.h>
 
 void	test_bzero(void);
 void	test_strcat(void);

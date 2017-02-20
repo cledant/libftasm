@@ -20,7 +20,9 @@ Thumbs.db
 
 # Project Executables #
 #######################
-a.out
+main_test
+cat_file
+cat_stdin
 
 # Folders #
 ###########

@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_cat_file.c                                    :+:      :+:    :+:   */
+/*   test_cat_stdin.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/16 18:32:47 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/16 20:14:53 by cledant          ###   ########.fr       */
+/*   Created: 2017/02/20 16:01:56 by cledant           #+#    #+#             */
+/*   Updated: 2017/02/20 16:02:26 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <unistd.h>
-
-void	ft_cat(int fd);
+#include "main_test.h"
+#include "libfts.h"
 
 int		main(void)
 {
-	int		fd;
-
 	ft_cat(0);
 	return (0);
 }

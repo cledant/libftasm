@@ -6,14 +6,12 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:32:47 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/16 19:29:20 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 15:59:53 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <unistd.h>
-
-void	ft_cat(int fd);
+#include "main_test.h"
+#include "libfts.h"
 
 int		main(int argc, char **argv)
 {
