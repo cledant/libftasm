@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/20 11:47:05 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/20 12:41:52 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ INCLUDES_LIBFTS = ../libfts/includes
 
 LIBFTS_PATH = ../libfts
 
-SRCS_NAME = main.c test_bzero.c test_strcat.c test_isalpha.c
+SRCS_NAME = main.c test_bzero.c test_strcat.c test_isalpha.c test_isdigit.c \
+			test_isalnum.c test_isascii.c test_isprint.c
 
 SRCS_PATH = ./srcs
 

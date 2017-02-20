@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 11:46:58 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 11:56:58 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/20 12:26:34 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,14 @@ void	test_isalpha(void)
 	ret2 = ft_isalpha(c);
 	printf("Number : %c, ft_isalpha : %d, isalpha : %d\n", c, ret, ret2);
 	c = 0;
+	ret = ft_isalpha(c);
+	ret2 = ft_isalpha(c);
+	printf("Number : %c, ft_isalpha : %d, isalpha : %d\n", c, ret, ret2);
+	c = 128;
+	ret = ft_isalpha(c);
+	ret2 = ft_isalpha(c);
+	printf("Number : %c, ft_isalpha : %d, isalpha : %d\n", c, ret, ret2);
+	c = '=';
 	ret = ft_isalpha(c);
 	ret2 = ft_isalpha(c);
 	printf("Number : %c, ft_isalpha : %d, isalpha : %d\n", c, ret, ret2);
