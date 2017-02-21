@@ -6,7 +6,7 @@
 /*   By: cledant <cledant@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/20 19:50:29 by cledant           #+#    #+#             */
-/*   Updated: 2017/02/20 20:07:21 by cledant          ###   ########.fr       */
+/*   Updated: 2017/02/21 10:21:04 by cledant          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	test_strcpy(void)
 	printf("Test ft_strcpy :\n%s\n", dst);
 	printf("Test ft_strcpy return :\n%s\n", ptr);
 	bzero(dst, sizeof(char) * 300);
-	printf("String in dst:\n%s\n", dst);
 	ptr = strcpy(dst, src);
 	printf("Test strcpy :\n%s\n", dst);
 	printf("Test strcpy return :\n%s\n", ptr);
@@ -44,7 +43,6 @@ void	test_strcpy(void)
 	bzero(dst, sizeof(char) * 300);
 	bzero(dst, sizeof(char) * 300);
 	memset(dst, '0', 50);
-	printf("String in dst:\n%s\n", dst);
 	ptr = strcpy(dst, src_empty);
 	printf("Test strcpy :\n%s\n", dst);
 	printf("Test strcpy return :\n%s\n", ptr);
@@ -59,7 +57,6 @@ void	test_strcpy(void)
 	bzero(dst, sizeof(char) * 300);
 	bzero(dst, sizeof(char) * 300);
 	memset(dst, '0', 50);
-	printf("String in dst:\n%s\n", dst);
 	ptr = strcpy(dst + 10, src + 5);
 	printf("Test strcpy :\n%s\n", dst);
 	printf("Test strcpy return :\n%s\n", ptr);

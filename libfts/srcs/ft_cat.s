@@ -3,7 +3,7 @@
 %define		STDOUT				1
 %define		WRITE				4
 %define		READ				3
-%define		BUFF_SIZE			64
+%define		BUFF_SIZE			128
 %define		MAX_FD				4864
 
 section .bss
