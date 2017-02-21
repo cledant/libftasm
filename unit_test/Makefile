@@ -6,7 +6,7 @@
 #    By: cledant <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/26 10:40:13 by cledant           #+#    #+#              #
-#    Updated: 2017/02/20 19:58:31 by cledant          ###   ########.fr        #
+#    Updated: 2017/02/21 13:02:26 by cledant          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(NAME_CAT_FILE) : $(OBJ_SRCS_CAT)
 $(NAME_CAT_STDIN) : $(OBJ_SRCS_CAT)
 	$(CC) -o $@ $(OBJ_DIR_NAME)/test_cat_stdin.o $(CFLAGS) $(LIBS) -L$(LIBFTS_PATH)
 
-$(OBJ_DIR_NAME)/%.o : $(SRCS_PATH)/%.c
+$(OBJ_DIR_NAME)/%.o : $(SRCS_PATH)/%.c $(OBJ_DIR_NAME)
 	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDES) -I$(INCLUDES_LIBFTS)
 
 clean :
